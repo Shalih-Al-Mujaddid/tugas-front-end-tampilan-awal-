@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Attack On Titan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">AOT<span>.</span></a>
+            <ul class="menu-link">
+                <span id="close-btn" class="material-symbols-outlined">close</span>
+                <a href="#">Home</a>
+                <a href="#">Product</a>
+                <a href="#">Testimonials</a>
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+            </ul>
+            <span id="menu-btn" class="material-symbols-outlined">menu</span>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+            <h1>Attac On <br><span>Titan</span></h1>
+            <p>Attack on Titan Attack on Titan, adalah sebuah seri manga shōnen asal Jepang yang ditulis dan diilustrasikan oleh Hajime Isayama. Ceritanya berlatar di dunia tempat umat manusia hidup di wilayah yang dikelilingi tiga lapis tembok besar, yang melindungi mereka dari makhluk pemakan manusia berukuran raksasa yang dikenal sebagai Titan.</p>
+       <button>Nonton Sekarang</button>
+        </div>
+    </section>
+
+    <script>
+        const header = document.querySelector("header");
+        const menuBtn = document.querySelector("#menu-btn");
+        const closeBtn = document.querySelector("#close-btn");
+
+        menuBtn.addEventListener("click", () => {
+            header.classList.toggle("show-mobile-menu");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menuBtn.click();
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,202 @@
+/*  Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url(../img/asdfghjk.png);
+    background-position: center;
+    background-size: cover;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navbar .logo{
+    color: #fff;
+    font-size: 2.1rem;
+    font-weight: 600;    
+}
+
+.navbar .logo span, .hero-section .content span{
+    color: rgb(255, 179, 1);
+
+}
+
+.navbar .menu-link {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.navbar a:hover {
+    color:  rgb(255, 179, 1);
+    font-style: italic;
+    transition: 0.2s;
+    font-size: 1.5rem;
+}
+
+.navbar .menu-link a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid  rgb(255, 179, 1);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .menu-link a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.hero-section .content {
+    color: #fff;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 2rem;
+}
+
+.hero-section .content h1 {
+    font-size: 3rem;
+    max-width: 600px;
+}
+
+.hero-section .content p {
+    font-weight: 300;
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+.hero-section .content button {
+    background: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    margin-top: 38px;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.hero-section .content button:hover {
+    color: #fff;
+    background:  rgb(255, 179, 1);
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+#menu-btn{
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#close-btn{
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    header.show-mobile-menu::before{
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+    }
+    
+    body {
+        height: 100vh;
+        background: url(img/l2.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    #close-btn, #menu-btn{
+        display: block;
+    }
+
+    .navbar .menu-link {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        flex-direction: column;
+        width: 260px;
+        height: 100vh;
+        background: #fff;
+        padding: 70px 40px 0;
+        transition: left 0.15s ease;
+    }
+
+    header{
+        padding: 10px 20px;
+    }
+
+    header.show-mobile-menu .navbar .menu-link{
+        left: 0;
+    }
+
+    .navbar a {
+        color: black;
+    }
+
+    .navbar .menu-link a::after{
+        transform-origin: 0 0;
+    }
+
+    .hero-section .content{
+        text-align: center;
+    }
+
+    .hero-section .content :is(h1, p){
+        max-width: 100%;
+    }
+
+    .hero-section .content h1{
+        font-size: 2.3rem;
+        line-height: 60px;
+    }
+
+    .hero-section .content button{
+        padding: 9px 18px;
+    }
+}
